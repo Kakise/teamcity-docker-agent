@@ -61,7 +61,8 @@ RUN apt-get update && \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update && \
     apt install -y gcc-8 g++-8 nodejs --no-install-recommends && \
-    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8 && \
+    apt-get clean all
     
 
 # A better fix for TW-52939 Dockerfile build fails because of aufs
