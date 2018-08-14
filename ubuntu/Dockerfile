@@ -55,10 +55,13 @@ RUN apt-get update && \
     \
     usermod -aG docker buildagent && \
     \
-    apt-get install cmake && \
+    apt-get -y install cmake curl && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
-    add-apt-repository ppa:ubuntu-toolchain-r/test && \
-    apt install g++-8 nodejs -y
+    add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
+    apt-get update && \
+    apt install -y gcc-8 g++-8 nodejs && \
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+    
 
 # A better fix for TW-52939 Dockerfile build fails because of aufs
 VOLUME /var/lib/docker
