@@ -56,7 +56,7 @@ RUN apt-get update && \
     usermod -aG docker buildagent && \
     \
     apt-get -y install cmake curl && \
-    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash && \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update && \
     apt install -y gcc-8 g++-8 nodejs && \
