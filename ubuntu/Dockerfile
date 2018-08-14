@@ -11,7 +11,7 @@ ENV NUGET_XMLDOC_MODE=skip \
     GIT_SSH_VARIANT=ssh
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
+    apt-get install -y software-properties-common apt-transport-https && \
     add-apt-repository -y ppa:openjdk-r/ppa && add-apt-repository -y ppa:git-core/ppa && apt-get update && \
     apt-get install -y git mercurial openjdk-8-jdk apt-transport-https ca-certificates && \
     \
