@@ -60,7 +60,7 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash && \
     add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update && \
-    apt install -y gcc-8 g++-8 nodejs --no-install-recommends && \
+    apt-get install -y gcc-8 g++-8 nodejs --no-install-recommends && \
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8 && \
     apt-get clean all
     
